@@ -90,24 +90,3 @@ function openDomainPopup(button) {
   localStorage.setItem("clickedDomain", domainName);
   elementorProFrontend.modules.popup.showPopup({ id: 233 });
 }
-
-3️⃣ Dynamic Heading and Hidden Field Binding
-
-(Source: heading -----.txt
-)
-
-🧩 Purpose:
-
-When a visitor clicks “Get This Domain”, the popup heading and hidden input field update dynamically.
-
-Example Heading in Popup:
-Inquire About <span id="domain-name"></span>
-
-document.querySelectorAll('.get-domain-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const domain = this.getAttribute('data-domain');
-    document.querySelector('#domain-name').textContent = domain;
-    document.querySelector('input[name="form_fields[domain_name]"]').value = domain;
-  });
-});
-
