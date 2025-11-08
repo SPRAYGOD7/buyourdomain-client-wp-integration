@@ -1,7 +1,21 @@
-# 🛒 BuyOurDomain.com – WooCommerce + Custom Domain Grid Integration
+# 🛒 BuyOurDomain.com – WooCommerce + Elementor Integration
 
-This documentation explains how to **manage domain products**, **edit front-end features**, and **understand the custom code** used on the WordPress site [buyourdomain.com](https://buyourdomain.com/).  
-It’s designed for clients or team members to easily make updates without breaking existing functionality.
+![WordPress](https://img.shields.io/badge/WordPress-6.x-blue?logo=wordpress)
+![WooCommerce](https://img.shields.io/badge/WooCommerce-Active-purple?logo=woocommerce)
+![Elementor](https://img.shields.io/badge/Elementor-Pro%20Used-FF4785?logo=elementor)
+![License](https://img.shields.io/badge/License-Custom-lightgrey)
+
+---
+
+### 🧩 Repository Info
+
+**Repo Name:** `woocommerce-domain-grid-system`  
+**Alternative Repo Name:** `buyourdomain-com-custom-wp-theme`  
+**Recommended Repo Name:** `buyourdomain-woocommerce-grid`  
+
+**Description:**  
+Dynamic WooCommerce domain product grid for [BuyOurDomain.com](https://buyourdomain.com/) with Elementor popup auto-fill, shortcode integration, and “View More” feature.  
+Includes PHP shortcode functions, JavaScript popup handlers, and responsive grid styling for domain-based WooCommerce products.
 
 ---
 
