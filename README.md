@@ -1,5 +1,5 @@
 # 🛒 BuyOurDomain.com – WooCommerce + Custom Domain Grid Integration
-
+![Homepage Grid Example](assets/buyourdomain.com.png)
 This documentation explains how to **manage domain products**, **edit front-end features**, and **understand the custom code** used on the WordPress site [buyourdomain.com](https://buyourdomain.com/).  
 It’s designed for developers, editors, or team members to easily maintain and update the website without breaking existing functionality.
 
@@ -17,7 +17,7 @@ The website lists **domain names as products** and dynamically displays them on 
 - Incremental “View More” loading of domains
 - Responsive grid layout with gradient buttons and hover effects
 - Automated email responses on enquiry submission (to user & admin)
-![Homepage Grid Example](assets/buyourdomain.com.png)
+  
 ---
 
 ## ⚙️ Table of Contents
