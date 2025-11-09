@@ -17,7 +17,7 @@ The website lists **domain names as products** and dynamically displays them on 
 - Incremental “View More” loading of domains
 - Responsive grid layout with gradient buttons and hover effects
 - Automated email responses on enquiry submission (to user & admin)
-
+![Homepage Grid Example](assets/buyourdomain.com.png)
 ---
 
 ## ⚙️ Table of Contents
