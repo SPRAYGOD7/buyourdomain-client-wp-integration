@@ -1,7 +1,3 @@
-theme file editor-------------------theme functions----------
-
-
-
 /** custom code below */
 
 // ===== COMMON FUNCTION FOR PRODUCT GRID =====
@@ -184,3 +180,4 @@ function buyourdomain_portfolio_domain_grid_shortcode() {
     return buyourdomain_domain_grid_common('portfolio');
 }
 add_shortcode('portfolio_domain_grid', 'buyourdomain_portfolio_domain_grid_shortcode');
+
