@@ -1,26 +1,3 @@
-heading -----
-Inquire About <span id="domain-name"></span>
-
-
-
-
-
-
-
-popup--------form
-domain name id
-
-
-
-
-
-
-
-
-
-custom html hidden container in form -----------------
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.get-domain-btn').forEach(function(btn) {
@@ -48,4 +25,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
 
