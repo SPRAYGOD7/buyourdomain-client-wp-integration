@@ -179,7 +179,8 @@ Find the
 ```html
 onclick="elementorProFrontend.modules.popup.showPopup({id: 381});" line.
 ```
-Replace 381 with the new Popup ID (from Elementor popup settings).
+Replace 381 with the new Popup ID (from Elementor popup settings).  
+![Homepage Grid Example](assets/formid.png)
 
 ## 🛍 How to Upload Domain Products
 Path: WordPress Dashboard > Products > Add New
@@ -191,6 +192,8 @@ Steps:
 4. featured → Displays in Featured Grid.
 5. portfolio → Displays in Portfolio Grid.
 6. Click Publish.
+     
+![Homepage Grid Example](assets/products.png)
 
 ## 🏗 How to Edit Homepage Section in Elementor
 
@@ -198,6 +201,8 @@ Path: Pages > Home > Edit with Elementor
 - Locate the section with shortcode `[featured_domain_grid]` , `[portfolio_domain_grid]`.
 - You can duplicate or move this section as needed.
 - For styling, edit section padding/margins via Elementor; functionality is handled via PHP.
+
+![Homepage Grid Example](assets/home.png)
 
 ## 🧑‍💻 Developer Notes
 
