@@ -1,0 +1,17 @@
+elementor custom code ----------- head
+
+<script>
+function openDomainPopup(button) {
+  const domainName = button.getAttribute("data-domain");
+  localStorage.setItem("clickedDomain", domainName);
+  elementorProFrontend.modules.popup.showPopup({ id: 233 });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const domainField = document.querySelector('input[name="form_fields[domain_name]"]');
+  if (domainField) {
+    const savedDomain = localStorage.getItem("clickedDomain");
+    if (savedDomain) domainField.value = savedDomain;
+  }
+});
+</script>

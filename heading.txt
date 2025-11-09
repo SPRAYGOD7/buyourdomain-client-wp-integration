@@ -1,0 +1,51 @@
+heading -----
+Inquire About <span id="domain-name"></span>
+
+
+
+
+
+
+
+popup--------form
+domain name id
+
+
+
+
+
+
+
+
+
+custom html hidden container in form -----------------
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.get-domain-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const domain = this.getAttribute('data-domain');
+      const target = document.querySelector('#domain-name');
+      if (target) target.textContent = domain;
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // When a button with data-domain is clicked
+  document.querySelectorAll('.get-domain-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const domain = this.getAttribute('data-domain');
+      const target = document.querySelector('#domain-name'); // Text element for display
+      const hiddenInput = document.querySelector('input[name="form_fields[domain_name]"]'); // Hidden field
+      
+      if (target) target.textContent = domain;
+      if (hiddenInput) hiddenInput.value = domain;
+    });
+  });
+});
+</script>
+
