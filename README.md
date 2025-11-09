@@ -193,3 +193,12 @@ Path: Pages > Home > Edit with Elementor
 - The hidden HTML widget ensures correct domain name injection into forms and email templates.
 - Each “Get This Domain” button triggers the popup and auto-fills the clicked domain.
 - Mail templates and automation are handled by Elementor Form Actions (Email, Admin Notification).
+
+## ✅ Summary
+
+This project integrates WooCommerce with a custom domain listing and enquiry system using PHP, JavaScript, and Elementor Pro.
+It allows for dynamic domain grids, popup-triggered enquiries, and automated email flows — all managed through the WordPress dashboard.
+
+## Maintainer: Lokendra Singh
+Tech Stack: WordPress · WooCommerce · PHP · JavaScript · Elementor Pro
+Project URL: buyourdomain.com
