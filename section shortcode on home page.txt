@@ -1,3 +1,2 @@
-section shortcode on home page-----
-
-[domain_grid]
+[featured_domain_grid]
+[portfolio_domain_grid]
