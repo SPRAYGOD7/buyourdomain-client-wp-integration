@@ -74,6 +74,7 @@ The website lists **domain names as products** and dynamically displays them on 
    Add HTML widget (hidden) with script below the form for domain name injection.
    
     ![Homepage Grid Example](assets/popup.png)
+   
     ![Homepage Grid Example](assets/popuphtmlwidgethidden.png)
 
 ---
@@ -81,7 +82,7 @@ The website lists **domain names as products** and dynamically displays them on 
 ## 🧠 Custom Code Explanations
 
 ### 🧩 PHP (functions.php)
-File: `functions.php`  
+File: `theme file editor.txt`  
 Purpose: Generate dynamic domain grid and handle “View More” functionality.
 
 Code Source: [`theme file editor.txt`](theme%20file%20editor.txt)
@@ -92,10 +93,11 @@ Key Functions:
 - `buyourdomain_portfolio_domain_grid_shortcode()` → Loads portfolio domains.
 - **JavaScript + CSS (inside function)** → Handles “View More” logic and styling.
 
----
+---  
 
+![Homepage Grid Example](assets/functions.php.png)
 ### 💡 Elementor Custom Code (Head)
-File: `elementor custom code ----------- h.txt`  
+File: `elementor custom codetxt`  
 Source: [`elementor custom code.txt`](elementor%20custom%20code.txt)
 
 ```html
@@ -115,11 +117,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 ```
-👉 This code saves the clicked domain name to LocalStorage and pre-fills it when the popup opens.
+👉 This code saves the clicked domain name to LocalStorage and pre-fills it when the popup opens.  
 
+![Homepage Grid Example](assets/ElementorCustomCode.png)
 ### 🧱 Popup Form Hidden HTML
 
-File: heading -----.txt
+File: heading.txt
 Source: [`heading.txt`](heading.txt)
 Purpose: Dynamically show and send the domain name inside the enquiry form.
 
@@ -150,9 +153,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 ```
+![Homepage Grid Example](assets/popuphtmlwidgethidden.png)
 ## 🧩 Section Shortcode on Home Page
 
-File: section shortcode on home page-----.txt
+File: section shortcode on home page.txt
 Source: [`section shortcode on home page.txt`](section%20shortcode%20on%20home%20page.txt)
 ```html
 [portfolio_domain_grid]
