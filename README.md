@@ -26,11 +26,11 @@ The website lists **domain names as products** and dynamically displays them on 
 2. [Website Structure](#-website-structure)
 3. [Custom Code Locations](#-custom-code-placing-locations)
 4. [Custom Code Explanation](#-custom-code-explanations)
-5. [Popup Form Configuration](#-pop-up-form-where-to-edit-in-elementor)
+5. [Popup Form – Where to Edit in Elementor](#-popup-form--where-to-edit-in-elementor)
 6. [Form ID Integration](#-how-to-change-popup-form-ids-in-custom-code)
 7. [Uploading Domain Products](#-how-to-upload-domain-products)
 8. [Editing Homepage Sections](#-how-to-edit-homepage-section-in-elementor)
-9. [Developer Notes](#-developer-notes)
+9. [Developer Notes](#%E2%80%8D-developer-notes)
 
 ---
 
@@ -186,7 +186,7 @@ Path: Pages > Home > Edit with Elementor
 - You can duplicate or move this section as needed.
 - For styling, edit section padding/margins via Elementor; functionality is handled via PHP.
 
-## 🧑‍💻Developer Notes
+## 🧑‍💻 Developer Notes
 
 - All shortcodes and frontend logic are located inside functions.php.
 - Popup scripts depend on Elementor Pro.
