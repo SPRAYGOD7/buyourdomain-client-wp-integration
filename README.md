@@ -59,18 +59,21 @@ The website lists **domain names as products** and dynamically displays them on 
 
 1. **Buy Section (PHP Shortcode):**  
    `Appearance > Theme File Editor > functions.php`
-   ![Homepage Grid Example](assets/functions.php.png)
    Handles product grid, button trigger, and View More logic.
+   
+    ![Homepage Grid Example](assets/functions.php.png)
 
 3. **Elementor Custom Code (Popup Autofill):**  
    `Elementor > Custom Code > buy domain`
-   ![Homepage Grid Example](assets/ElementorCustomCode.png)
    Controls popup trigger and domain data sync using LocalStorage.
+
+   ![Homepage Grid Example](assets/ElementorCustomCode.png)
 
 5. **Popup Form Hidden HTML (Domain Sync):**  
    `Elementor > Templates > Popups > Domain Enquiry Popup`
-    ![Homepage Grid Example](assets/popup.png)
    Add HTML widget (hidden) with script below the form for domain name injection.
+   
+    ![Homepage Grid Example](assets/popup.png)
     ![Homepage Grid Example](assets/popuphtmlwidgethidden.png)
 
 ---
