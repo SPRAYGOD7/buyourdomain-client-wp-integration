@@ -1,97 +1,109 @@
 # 🛒 BuyOurDomain.com – WooCommerce + Custom Domain Grid Integration
 
 This documentation explains how to **manage domain products**, **edit front-end features**, and **understand the custom code** used on the WordPress site [buyourdomain.com](https://buyourdomain.com/).  
-It’s designed for clients or team members to easily make updates without breaking existing functionality.
+It’s designed for developers, editors, or team members to easily maintain and update the website without breaking existing functionality.
 
 ---
 
-## 📂 Project Overview
+## 📘 Project Overview
 
-The website lists **domain names as products** and displays them dynamically on the homepage using **custom shortcodes** and **Elementor integrations**.
+The website lists **domain names as products** and dynamically displays them on the homepage using **custom PHP shortcodes**, **Elementor integrations**, and **custom JavaScript** for popup and form interactions.
 
-**Main customizations include:**
-- Dynamic product grid display based on category (`featured`, `portfolio`, etc.)
-- “Get This Domain” popup trigger integration via Elementor (custom code + Elementor Pro popup & form)
-- LocalStorage-based domain name auto-fill in popup forms
-- “View More” functionality for incremental domain loading
-- Responsive and visually clean grid layout
-- Automated mail responses to both the **site owner** and **user** on domain inquiry submission with custom mail templates
+### 🧠 Core Custom Features
+- Dynamic product grid display by category (`featured`, `portfolio`, etc.)
+- “Get This Domain” popup trigger integrated with Elementor
+- LocalStorage-based domain name auto-fill in popup form
+- Hidden HTML element in popup for domain name injection
+- Incremental “View More” loading of domains
+- Responsive grid layout with gradient buttons and hover effects
+- Automated email responses on enquiry submission (to user & admin)
 
 ---
 
 ## ⚙️ Table of Contents
 
-1. [Website Structure](#-website-structure)  
-2. [Custom Code Locations](#-custom-code-placing-locations)  
-3. [Custom Code Explanation](#-custom-code-explanations)  
-4. [Popup Form in Elementor](#-pop-up-form-where-to-edit-in-elementor)  
-5. [Changing Popup Form IDs](#-how-to-change-popup-form-ids-to-main-custom-code)  
-6. [How to Upload Domain Products](#-how-to-upload-domain-products)  
-7. [How to Edit Homepage Section](#-how-to-edit-homepage-section-in-elementor)  
-8. [Developer Notes](#-developer-notes)
+1. [File Structure](#-file-structure)
+2. [Website Structure](#-website-structure)
+3. [Custom Code Locations](#-custom-code-placing-locations)
+4. [Custom Code Explanation](#-custom-code-explanations)
+5. [Popup Form Configuration](#-pop-up-form-where-to-edit-in-elementor)
+6. [Form ID Integration](#-how-to-change-popup-form-ids-in-custom-code)
+7. [Uploading Domain Products](#-how-to-upload-domain-products)
+8. [Editing Homepage Sections](#-how-to-edit-homepage-section-in-elementor)
+9. [Developer Notes](#-developer-notes)
 
 ---
 
 ## 📁 File Structure
 
-| File | Description |
-|------|--------------|
-| `functions.php` | Contains PHP shortcodes, grid logic, “Get This Domain” button, and popup trigger integration. |
-| `elementor custom code.txt` | Handles popup auto-fill via LocalStorage. |
-| `heading.txt` | Custom HTML code to dynamically display and store the clicked domain name in Elementor forms. Should be placed in an HTML widget and hidden on frontend for all devices. |
-| `section shortcode on home page.txt` | Contains the shortcode used in Elementor to render the domain grid. |
+| File | Location | Description |
+|------|-----------|-------------|
+| `functions.php` | `Appearance > Theme File Editor > functions.php` | Contains PHP shortcodes, grid logic, and popup trigger integration. |
+| `elementor custom code (head)` | `Elementor > Custom Code > buy domain` | JS for domain auto-fill via LocalStorage and popup triggering. |
+| `heading (HTML widget)` | `Elementor > Templates > Popups > Domain Enquiry Popup` | Hidden HTML + JS for domain injection into form fields. |
+| `section shortcode` | `Elementor > Home Page > Custom Section` | Adds `[domain_grid]` shortcode for displaying domain list. |
 
 ---
 
 ## 🧩 Website Structure
 
-- **Frontend:** Built using the **Astra Theme** and **Elementor Page Builder**.  
-- **Custom Section:** Domain “Buy Now” section added via shortcode inside Elementor.  
-- **Popup:** Created using Elementor’s Popup Builder.  
-- **Buy Now Form:** Designed using Elementor Form widget inside the popup.
+- **Theme:** Astra  
+- **Builder:** Elementor  
+- **Custom Section:** Added via `[domain_grid]` shortcode  
+- **Popup:** Elementor popup named `Domain Enquiry Popup`  
+- **Form:** Elementor form widget with hidden domain field (`domain_name`)
 
 ---
 
-## 🗂️ Custom Code Placing Locations
+## 📍 Custom Code Placing Locations
 
-| Location | File | Description |
-|-----------|------|-------------|
-| 1️⃣ | `Appearance → Theme File Editor → functions.php` | Contains main grid display logic and shortcode. (File: `theme file editor`) |
-| 2️⃣ | `Elementor → Custom Code → Buy Domain` | JavaScript for popup and form auto-fill using LocalStorage. (File: `elementor custom code`) |
-| 3️⃣ | `Elementor → Templates → Popups → Domain Enquiry Popup` | Hidden HTML widget containing dynamic JavaScript that updates the domain name inside the popup form. (File: `heading.txt`) |
+1. **Buy Section (PHP Shortcode):**  
+   `Appearance > Theme File Editor > functions.php`  
+   Handles product grid, button trigger, and View More logic.
 
-*(You can add relevant screenshots for each location in this section.)*
+2. **Elementor Custom Code (Popup Autofill):**  
+   `Elementor > Custom Code > buy domain`  
+   Controls popup trigger and domain data sync using LocalStorage.
+
+3. **Popup Form Hidden HTML (Domain Sync):**  
+   `Elementor > Templates > Popups > Domain Enquiry Popup`  
+   Add HTML widget (hidden) with script below the form for domain name injection.
 
 ---
 
 ## 🧠 Custom Code Explanations
 
-### **1️⃣ functions.php (Main Grid Logic)**
-**Purpose:**  
-This file generates the product grid dynamically from WooCommerce categories and connects the “Get This Domain” button with the popup.
+### 🧩 PHP (functions.php)
+File: `functions.php`  
+Purpose: Generate dynamic domain grid and handle “View More” functionality.
 
-**Key Functions:**
-- `buyourdomain_domain_grid_common($category_slug)` → Core logic for the domain grid  
-- `[featured_domain_grid]` & `[portfolio_domain_grid]` → Shortcodes to render domain grids in Elementor
+Code Source: [`theme file editor------------------.txt`](theme%20file%20editor------------------.txt)
 
-**Editable Lines:**
-- **Popup ID:**  
-  Located around this line:
-  ```php
-  onclick="elementorProFrontend.modules.popup.showPopup({id: 381});"
-Change the 381 to match your popup’s ID in Elementor if needed.
+Key Functions:
+- `buyourdomain_domain_grid_common()` → Generates domain product cards dynamically.
+- `buyourdomain_featured_domain_grid_shortcode()` → Loads featured domains.
+- `buyourdomain_portfolio_domain_grid_shortcode()` → Loads portfolio domains.
+- **JavaScript + CSS (inside function)** → Handles “View More” logic and styling.
 
-Category Logic:
-Change 'featured' or 'portfolio' in the shortcode definitions to display different categories.
+---
 
-What It Does:
+### 💡 Elementor Custom Code (Head)
+File: `elementor custom code ----------- h.txt`  
+Source: :contentReference[oaicite:0]{index=0}
 
-Pulls WooCommerce products by category.
+```html
+<script>
+function openDomainPopup(button) {
+  const domainName = button.getAttribute("data-domain");
+  localStorage.setItem("clickedDomain", domainName);
+  elementorProFrontend.modules.popup.showPopup({ id: 233 });
+}
 
-Displays the first 8 products, hides the rest.
-
-Adds “View More” button that loads 4 additional items each time.
-
-Automatically hides “View More” when all products are visible.
-
-Integrates popup trigger for each domain card.
+document.addEventListener("DOMContentLoaded", function () {
+  const domainField = document.querySelector('input[name="form_fields[domain_name]"]');
+  if (domainField) {
+    const savedDomain = localStorage.getItem("clickedDomain");
+    if (savedDomain) domainField.value = savedDomain;
+  }
+});
+</script>
