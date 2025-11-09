@@ -77,7 +77,7 @@ The website lists **domain names as products** and dynamically displays them on 
 File: `functions.php`  
 Purpose: Generate dynamic domain grid and handle “View More” functionality.
 
-Code Source: [`theme file editor------------------.txt`](theme%20file%20editor------------------.txt)
+Code Source: [`theme file editor.txt`](theme%20file%20editor.txt)
 
 Key Functions:
 - `buyourdomain_domain_grid_common()` → Generates domain product cards dynamically.
