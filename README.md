@@ -79,3 +79,19 @@ This file generates the product grid dynamically from WooCommerce categories and
   Located around this line:
   ```php
   onclick="elementorProFrontend.modules.popup.showPopup({id: 381});"
+Change the 381 to match your popup’s ID in Elementor if needed.
+
+Category Logic:
+Change 'featured' or 'portfolio' in the shortcode definitions to display different categories.
+
+What It Does:
+
+Pulls WooCommerce products by category.
+
+Displays the first 8 products, hides the rest.
+
+Adds “View More” button that loads 4 additional items each time.
+
+Automatically hides “View More” when all products are visible.
+
+Integrates popup trigger for each domain card.
