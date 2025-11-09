@@ -89,7 +89,7 @@ Key Functions:
 
 ### 💡 Elementor Custom Code (Head)
 File: `elementor custom code ----------- h.txt`  
-Source: :contentReference[oaicite:0]{index=0}
+Source: [`elementor custom code.txt`](elementor%20custom%20code.txt)
 
 ```html
 <script>
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 ## 🧩 Section Shortcode on Home Page
 
 File: section shortcode on home page-----.txt
-Source: 
+Source: [`section shortcode on home page.txt`](section%20shortcode%20on%20home%20page.txt)
 ```html
 [portfolio_domain_grid]
 [featured_domain_grid]
