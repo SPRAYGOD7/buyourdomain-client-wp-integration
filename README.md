@@ -107,3 +107,89 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+```
+👉 This code saves the clicked domain name to LocalStorage and pre-fills it when the popup opens.
+
+### 🧱 Popup Form Hidden HTML
+
+File: heading -----.txt
+Source: [`heading.txt`](heading.txt)
+Purpose: Dynamically show and send the domain name inside the enquiry form.
+
+```html
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.get-domain-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const domain = this.getAttribute('data-domain');
+      const target = document.querySelector('#domain-name');
+      if (target) target.textContent = domain;
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.get-domain-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const domain = this.getAttribute('data-domain');
+      const target = document.querySelector('#domain-name');
+      const hiddenInput = document.querySelector('input[name="form_fields[domain_name]"]');
+      if (target) target.textContent = domain;
+      if (hiddenInput) hiddenInput.value = domain;
+    });
+  });
+});
+</script>
+```
+## 🧩 Section Shortcode on Home Page
+
+File: section shortcode on home page-----.txt
+Source: 
+```html
+[portfolio_domain_grid]
+[featured_domain_grid]
+```
+➡ Add this shortcode inside Elementor where you want the grid to appear (typically in a custom HTML widget or section).
+
+## 🧾 Popup Form – Where to Edit in Elementor
+Path: Elementor > Templates > Popups > Domain Enquiry Popup 
+Edit the popup form using Elementor form widget.
+Ensure the field ID for domain name = domain_name.
+Add the hidden HTML widget (code above) under the form.
+Hide this widget from all frontend devices.
+
+## 🔧 How to Change Popup Form IDs in Custom Code
+Open functions.php
+Find the
+```html
+onclick="elementorProFrontend.modules.popup.showPopup({id: 381});" line.
+```
+Replace 381 with the new Popup ID (from Elementor popup settings).
+
+## 🛍 How to Upload Domain Products
+Path: WordPress Dashboard > Products > Add New
+
+Steps: 
+1. Enter domain name in Product Title (e.g., buyourdomain.com).
+2. Leave price empty (for enquiry-based sales).
+3. Select Category:
+4. featured → Displays in Featured Grid.
+5. portfolio → Displays in Portfolio Grid.
+6. Click Publish.
+
+## 🏗 How to Edit Homepage Section in Elementor
+
+Path: Pages > Home > Edit with Elementor
+- Locate the section with shortcode `[featured_domain_grid]` , `[portfolio_domain_grid]`.
+- You can duplicate or move this section as needed.
+- For styling, edit section padding/margins via Elementor; functionality is handled via PHP.
+
+## 🧑‍💻Developer Notes
+
+- All shortcodes and frontend logic are located inside functions.php.
+- Popup scripts depend on Elementor Pro.
+- The hidden HTML widget ensures correct domain name injection into forms and email templates.
+- Each “Get This Domain” button triggers the popup and auto-fills the clicked domain.
+- Mail templates and automation are handled by Elementor Form Actions (Email, Admin Notification).
