@@ -162,14 +162,16 @@ Source: [`section shortcode on home page.txt`](section%20shortcode%20on%20home%2
 [portfolio_domain_grid]
 [featured_domain_grid]
 ```
-➡ Add this shortcode inside Elementor where you want the grid to appear (typically in a custom HTML widget or section).
+➡ Add this shortcode inside Elementor where you want the grid to appear (typically in a custom HTML widget or section).  
 
+![Homepage Grid Example](assets/shortcode.png)
 ## 🧾 Popup Form – Where to Edit in Elementor
 Path: Elementor > Templates > Popups > Domain Enquiry Popup 
 Edit the popup form using Elementor form widget.
 Ensure the field ID for domain name = domain_name.
 Add the hidden HTML widget (code above) under the form.
-Hide this widget from all frontend devices.
+Hide this widget from all frontend devices.  
+![Homepage Grid Example](assets/popup.png)
 
 ## 🔧 How to Change Popup Form IDs in Custom Code
 Open functions.php
