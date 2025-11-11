@@ -4,7 +4,7 @@
 function buyourdomain_domain_grid_common($category_slug) {
     ob_start(); ?>
 
-    <div class="domain-products-grid">
+    <div class="domain-products-grid <?php echo esc_attr($category_slug); ?>">
       <?php
       $args = array(
         'post_type' => 'product',
@@ -43,18 +43,36 @@ function buyourdomain_domain_grid_common($category_slug) {
       ?>
     </div>
 
-    <?php if ($total > 8): // ✅ Only show button if more than 8 domains ?>
+    <?php if ($total > 8): ?>
     <div class="view-more-wrap">
       <button id="view-more-btn-<?php echo esc_attr($category_slug); ?>" class="view-more-btn">View More</button>
     </div>
     <?php endif; ?>
 
 <style>
+/* Default grid for all categories */
 .domain-products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
   margin-top: 40px;
+}
+
+/* ✅ Featured category: only 3 items per row on desktop */
+.domain-products-grid.featured {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .domain-products-grid.featured {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .domain-products-grid.featured {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .domain-item {
@@ -144,7 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const items = viewMoreBtn.closest('div').previousElementSibling.querySelectorAll('.domain-item');
   let visibleCount = 8;
 
-  // ✅ Hide button if less than or equal to visibleCount
   if (items.length <= visibleCount) {
     viewMoreBtn.style.display = 'none';
     return;
@@ -155,7 +172,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextItems = Array.from(items).slice(visibleCount, visibleCount + 4);
     nextItems.forEach(item => item.classList.remove('hidden'));
     visibleCount += 4;
-
     if (visibleCount >= items.length) {
       viewMoreBtn.style.display = 'none';
     }
